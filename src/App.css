@@ -1,9 +1,14 @@
 @import "tailwindcss";
-
+body {
+  @apply bg-black/70;
+}
 .login,
 .signup {
   background-image: url("./assets/bg3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.nav-item {
+  @apply hover:text-white;
 }

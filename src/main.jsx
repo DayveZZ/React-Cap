@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router";
 import Login from "./components/Login.jsx";
 import Signup from "./components/Signup.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
-import { AuthProvider } from "./contexts/AuthContext.jsx";
+import { AuthProvider } from "./contexts/AuthProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>

@@ -1,8 +1,8 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import AuthContext from "./AuthContext";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
-
-export const AuthContext = createContext();
+console.log(API_URL);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -34,10 +34,10 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Signup function
   const signup = async (username, email, password, navigate) => {
     try {
-      const res = await fetch(`${API_URL}/user`, {
+      const res = await fetch(`${API_URL}/users`, {
+        // <-- plural here
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
@@ -49,17 +49,16 @@ export const AuthProvider = ({ children }) => {
       setUser(newUser);
       localStorage.setItem("user", JSON.stringify(newUser));
       console.log("Signup successful");
-      navigate("/"); // ✅ redirect to dashboard
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
   };
 
-  // Logout function
   const logout = () => {
-    setUser(null);
-    localStorage.removeItem("user");
-    console.log("Logged out");
+    // setUser(null);
+    // localStorage.removeItem("user");
+    // console.log("Logged out");
   };
 
   return (
