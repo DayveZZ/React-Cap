@@ -55,6 +55,7 @@ const Login = () => {
             id="email"
             name="email"
             required
+            className="outline-none border w-full p-2 rounded"
           />
         </div>
         <div>
@@ -68,10 +69,16 @@ const Login = () => {
             id="password"
             name="password"
             required
+            className="outline-none border w-full p-2 rounded"
           />
         </div>
-        <button type="submit">Login</button>
-        <Link style={{ textAlign: "center" }} to="/signup">
+        <button
+          type="submit"
+          className="bg-black/40 hover:text-white/90 shadow w-fit py-2 px-4 rounded-lg m-auto cursor-pointer"
+        >
+          Login
+        </button>
+        <Link className="text-center" to="/signup">
           Don't have an account?{" "}
           <span className="hover:text-[#ac2323]">Signup</span>
         </Link>
