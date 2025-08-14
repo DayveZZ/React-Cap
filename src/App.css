@@ -9,6 +9,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.nav-item {
-  @apply hover:text-white;
+.dashborad-items {
+  @apply hover:text-white underline-offset-8 underline;
 }

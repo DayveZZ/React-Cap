@@ -1,35 +1,23 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "./contexts/AuthContext";
 import Header from "./components/Header";
-import AddTask from "./components/AddTask";
-import TaskCard from "./components/TaskCard";
-
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   const auth = useContext(AuthContext);
 
-  const [isTaskOpen, setIsTaskOpen] = useState(false);
+  // const [isTaskOpen, setIsTaskOpen] = useState(false);
 
-  const handleClick = () => {
-    setIsTaskOpen(true);
-  };
+  // const handleClick = () => {
+  //   setIsTaskOpen(true);
+  // };
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        width: "100%",
-      }}
-    >
-      <div
-        style={{
-          height: "10%",
-        }}
-      >
-        <Header />
-      </div>
+    <div>
+      {/* <Header /> */}
 
-      <div
+      <Dashboard />
+      {/* <div
         className="body"
         style={{
           display: "flex",
@@ -56,14 +44,6 @@ const App = () => {
             boxShadow: "0 2px 6px rgba(0, 0, 0, 0.08)", // soft shadow
           }}
         >
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
-          <TaskCard />
           <TaskCard />
           <TaskCard />
         </div>
@@ -100,7 +80,7 @@ const App = () => {
           </button>
           {isTaskOpen && <AddTask setIsTaskOpen={setIsTaskOpen} />}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
