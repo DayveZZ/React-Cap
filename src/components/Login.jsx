@@ -72,7 +72,8 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
         <Link style={{ textAlign: "center" }} to="/signup">
-          Don't have an account? Signup
+          Don't have an account?{" "}
+          <span className="hover:text-[#ac2323]">Signup</span>
         </Link>
       </form>
     </div>
