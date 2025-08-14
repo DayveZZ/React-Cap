@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
@@ -66,7 +67,13 @@ export const AuthProvider = ({ children }) => {
         return { success: false, error: "User with this email already exists" };
       }
 
-      const userId = await generateUserId();
+      // const generateUserID = () => {
+      //   return `user-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+      // };
+      // const userId = generateUserID();
+
+      const userId = uuidv4();
+
       const newUser = { ...userdata, userId };
 
       const res = await fetch(`${API_URL}/users`, {

@@ -40,50 +40,58 @@ const Login = () => {
   };
 
   return (
-    <div className="page-section active">
-      {/* <Header/> */}
-      <form onSubmit={handleSubmit} className="auth-form">
-        <h2>Login</h2>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-            type="email"
-            id="email"
-            name="email"
-            required
-            className="outline-none border w-full p-2 rounded"
-          />
+    <>
+      <div className="login flex items-center justify-center h-dvh">
+        <div className="page-section active bg-white text-black/70 shadow-lg border border-black/5  py-8 px-12 flex flex-col gap-4 rounded-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="auth-form flex flex-col gap-4"
+          >
+            <h2 className="font-semibold text-3xl mb-4 flex flex-col">Login</h2>
+            <div>
+              <label htmlFor="email">Email:</label>
+              <input
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="outline-none border w-full p-2 rounded"
+              />
+            </div>
+            <div>
+              <label htmlFor="password">Password:</label>
+              <input
+                value={formData.password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+                type="password"
+                id="password"
+                name="password"
+                required
+                className="outline-none border w-full p-2 rounded"
+              />
+            </div>
+            <button
+              type="submit"
+              className="bg-black/40 hover:text-white/90 shadow w-fit py-2 px-4 rounded-lg m-auto cursor-pointer"
+            >
+              Login
+            </button>
+            <span className="text-center">
+              Don't have an account?{" "}
+              <Link to="/signup" className="hover:text-[#ac2323] text-black">
+                Signup
+              </Link>
+            </span>
+          </form>
         </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
-            type="password"
-            id="password"
-            name="password"
-            required
-            className="outline-none border w-full p-2 rounded"
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-black/40 hover:text-white/90 shadow w-fit py-2 px-4 rounded-lg m-auto cursor-pointer"
-        >
-          Login
-        </button>
-        <Link className="text-center" to="/signup">
-          Don't have an account?{" "}
-          <span className="hover:text-[#ac2323]">Signup</span>
-        </Link>
-      </form>
-    </div>
+      </div>
+    </>
   );
 };
 

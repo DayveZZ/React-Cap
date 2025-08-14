@@ -102,10 +102,12 @@ const Signup = () => {
               Signup
             </button>
 
-            <Link className="text-center" to="/login">
+            <span className="text-center">
               Already have an account?{" "}
-              <span className="hover:text-[#ac2323]">Login</span>
-            </Link>
+              <Link className="hover:text-[#ac2323] text-black" to="/login">
+                Login
+              </Link>
+            </span>
           </form>
         </div>
       </div>

@@ -1,3 +1,11 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "a67c",
+      "username": "Dayve",
+      "email": "d@d.com",
+      "password": "123",
+      "userId": "4032b1f3-f727-4b78-b862-0fb729ccaee5"
+    }
+  ]
 }

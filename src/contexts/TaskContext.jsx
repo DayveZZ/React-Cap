@@ -15,7 +15,6 @@ export const TaskProvider = ({ children }) => {
   // create task
   const createTask = async (task) => {
     try {
-
       const newTask = { ...task, taskId: 142, userId: user.userId };
 
       const res = await fetch(`${API_URL}/tasks`, {
@@ -30,8 +29,6 @@ export const TaskProvider = ({ children }) => {
       setTasks((prev) => {
         return [...prev, data];
       });
-
-
     } catch (error) {
       console.log(error.message); // install a hot-toast
     }

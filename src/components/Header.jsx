@@ -54,14 +54,16 @@ const Header = () => {
   };
 
   return (
-    <div style={headerStyle}>
-      <h1 style={leftSectionStyle}>MyTasks</h1>
+    // <div style={headerStyle}>
+    <div className="flex items-center justify-between bg-black/80 text-white/70 py-4 px-8 shadow">
+      <h1 className="text-2xl">MyProject</h1>
       <div style={rightSectionStyle}>
         {user && (
           <>
-            <span style={userEmailStyle}>{auth.user.email}</span>
             <Link to="/profile">
-              <button style={logoutButtonStyle}>Profile</button>
+              <button style={logoutButtonStyle}>
+                <span>{auth.user.username}</span>
+              </button>
             </Link>
             <button
               style={logoutButtonStyle}
